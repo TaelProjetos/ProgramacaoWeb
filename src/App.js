@@ -5,20 +5,21 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { yellow, pink } from '@mui/material/colors'
 import KarangoList from './pages/KarangoList'
 import KarangoForm from './pages/KarangoForm'
+import ClienteList from './pages/ClienteList'
 
 const customTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: yellow[500]
+      main: pink[500]
     },
     secondary: {
-      main: pink[500]
+      main: yellow[100]
     }
   }
 })
 
-
+// Função App que contém tudo que será exibido na página
 function App() {
   return (
     <>
@@ -36,6 +37,7 @@ function App() {
               <Routes>
                 <Route path="/karango" element={<KarangoList />}/>
                 <Route path="/karango/novo" element={<KarangoForm />}/>
+                <Route path="/cliente" element={<ClienteList />}/> {/*Criada a rota que se comunica com a API de clientes*/}
               </Routes>
               
             </Box>
