@@ -3,6 +3,7 @@ import {createTheme, ThemeProvider} from '@mui/material'
 import Box from '@mui/material/Box'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { yellow, pink } from '@mui/material/colors'
+import StartPage from './pages/StartPage'
 import KarangoList from './pages/KarangoList'
 import KarangoForm from './pages/KarangoForm'
 import ClienteList from './pages/ClienteList'
@@ -35,6 +36,7 @@ function App() {
 
             <Box component="main" sx={{ m: '24px' /* margin: '24px '*/ }}>
               <Routes>
+                <Route path="/" element={<StartPage />}/> {/*Criada a rota para a página inicial*/}
                 <Route path="/karango" element={<KarangoList />}/>
                 <Route path="/karango/novo" element={<KarangoForm />}/>
                 <Route path="/cliente" element={<ClienteList />}/> {/*Criada a rota que se comunica com a API de clientes*/}
